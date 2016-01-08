@@ -9,8 +9,6 @@ namespace Assets.Scripts {
 
         public Rigidbody BallPrefab = null;
 
-        public Rigidbody BallCurrent = null;
-
         public Vector3 BallStartOffset = Vector3.forward;
 
         [ Range( 1.0f, 100.0f ) ] public float MinForce = 1.0f;
@@ -41,9 +39,9 @@ namespace Assets.Scripts {
                 return;
             }
             float force = GetChargedForce();
-            BallCurrent = MakeBall();
-            ApplyBallForce( BallCurrent, force );
-            Debug.LogFormat( "Spawned ball at {0} with force {1}.", BallCurrent.transform.position, force );
+            Rigidbody ball = MakeBall();
+            ApplyBallForce( ball, force );
+            Debug.LogFormat( "Spawned ball at {0} with force {1}.", ball.transform.position, force );
             m_shouldFire = false;
             m_chargeTime = 0.0f;
         } // Ball Launch
