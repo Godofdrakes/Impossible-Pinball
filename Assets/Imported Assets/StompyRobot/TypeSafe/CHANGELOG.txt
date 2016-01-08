@@ -1,0 +1,63 @@
+1.2.1
+----------
+
+Changes:
+- Menu items are no longer specified in the .dll file, instead are located in TypeSafe/Editor/MenuItems.cs to allow for user customisation.
+- No longer aborts compile process if a C#-safe name for a resource cannot be found, instead skips and prints a compile error.
+- Added "Start Scan" button to settings window.
+
+Fixes:
+- Resources with a custom type that is 'private' are now declared as 'internal' to prevent "Inconsistent accessibility" errors.
+
+1.2.0
+----------
+
+New:
+- Input axes are now included in generated code (as defined in the Input Manager)
+- 'Whitelist' mode allows you to specify only the folders/assets you want to include.
+- Select what can trigger automatic scan (resources, layers, scenes, etc).
+- Customise the output directory from the settings window.
+
+Improvements:
+- Settings window updated with new layout, added changelog tab to welcome window.
+- Can opt-in to including disabled scenes in the generated code (useful for development when not including all scenes of your game in test builds)
+
+Fixes:
+- Prevent '.' character in naming scheme class names.
+- (Mac) Prevent settings asset from being overridden when reimporting project.
+
+1.1.1
+----------
+
+New:
+- Added Unload() method to resources.
+- Added UnloadAll() and UnloadAllRecursive() methods to resource folders.
+
+Improvements:
+- Resource wrappers now cache with a weak reference, so they do not prevent Resources.UnloadUnusedResources() working.
+
+1.1.0
+----------
+
+New:
+- Added ITypeSafeDataSource interface for using TypeSafe for custom data. See documentation for details.
+- Added TypeSafeApi static class for invoking TypeSafe scan/compile process via script.
+- PrefabResource.Instantiate(Vector3) overload added (no rotation)
+
+Fixes:
+- Fixed "Object has been cleaned up" warning when saving a scene with TypeSafe enabled.
+
+1.0.1
+----------
+
+New:
+- Added documentation comments to generated resource folder methods (GetContents, etc).
+
+Fixes:
+- Welcome window no longer shows up after the first time
+- Fixed Editor-only resources being included in scan
+
+1.0.0
+----------
+
+Initial version.
