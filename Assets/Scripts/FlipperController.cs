@@ -7,7 +7,7 @@ public class FlipperController : MonoBehaviour
     public int torqueValue = 500;
 
 
-    private HingeJoint hingeJoint;
+    private HingeJoint hj;
     private Rigidbody rb;
 
     public float activeAngle = 35;
@@ -18,7 +18,7 @@ public class FlipperController : MonoBehaviour
     void Start ()
     {
         rb = GetComponent<Rigidbody>();
-        hingeJoint = GetComponent<HingeJoint>();
+        hj = GetComponent<HingeJoint>();
     }
 	
 	// Update is called once per frame
@@ -38,7 +38,7 @@ public class FlipperController : MonoBehaviour
         var JointSpring = new JointSpring();
         JointSpring.spring = force;
         JointSpring.targetPosition = angle;
-        JointSpring.damper = hingeJoint.spring.damper;
-        hingeJoint.spring = JointSpring;
+        JointSpring.damper = hj.spring.damper;
+        hj.spring = JointSpring;
     }
 }
