@@ -24,7 +24,7 @@ namespace Assets.Scripts {
         private bool m_shouldFire = false;
 
         private void ApplyBallForce( Rigidbody ball, float force ) {
-            ball.AddRelativeForce( Vector3.forward * force, ForceMode.VelocityChange );
+            ball.AddRelativeForce( transform.up * force, ForceMode.VelocityChange );
         }
 
         private IEnumerator ChargeShot() {
@@ -49,7 +49,7 @@ namespace Assets.Scripts {
         private float GetChargedForce() { return Mathf.Lerp( MinForce, MaxForce, m_chargeTime / TimeUntilMaxForce ); }
 
         private Rigidbody MakeBall() {
-            return Instantiate( BallPrefab, transform.position + BallStartOffset, Quaternion.identity ) as Rigidbody;
+            return Instantiate( BallPrefab, transform.position + transform.up, Quaternion.identity ) as Rigidbody;
         }
 
         private void Start() { } // Init
