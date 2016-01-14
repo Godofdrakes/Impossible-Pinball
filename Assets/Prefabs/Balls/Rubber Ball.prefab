@@ -13,7 +13,7 @@ GameObject:
   - 135: {fileID: 13586988}
   - 54: {fileID: 5422794}
   m_Layer: 0
-  m_Name: Simple Ball
+  m_Name: Metal Ball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41,7 +41,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 5fc696d01a42b2a4b89cb562e35c09b4, type: 2}
+  - {fileID: 2100000, guid: 7be250fba03963042bb3ba3eb1e64c7d, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -85,7 +85,7 @@ SphereCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 188482}
-  m_Material: {fileID: 13400000, guid: b2ec2869d7a71944b83dd87a8b571d2e, type: 2}
+  m_Material: {fileID: 13400000, guid: f114b68b70450584c98dc3b82e99e136, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -101,7 +101,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Material
       value: 
-      objectReference: {fileID: 13400000, guid: b2ec2869d7a71944b83dd87a8b571d2e,
+      objectReference: {fileID: 13400000, guid: f114b68b70450584c98dc3b82e99e136,
         type: 2}
     - target: {fileID: 0}
       propertyPath: m_CollisionDetection
@@ -114,7 +114,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 5fc696d01a42b2a4b89cb562e35c09b4, type: 2}
+      objectReference: {fileID: 2100000, guid: 7be250fba03963042bb3ba3eb1e64c7d, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 188482}
