@@ -11,6 +11,7 @@ GameObject:
   - 33: {fileID: 3324738}
   - 136: {fileID: 13611022}
   - 23: {fileID: 2303076}
+  - 114: {fileID: 11487858}
   m_Layer: 0
   m_Name: Bumper
   m_TagString: Untagged
@@ -63,6 +64,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 134744}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &11487858
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 134744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be81b68104b7b2e40a7f32a877feef3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bumperForce: 0
 --- !u!136 &13611022
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -87,6 +100,10 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: e142f1c942e77d441951092df6e845b4, type: 2}
+    - target: {fileID: 0}
+      propertyPath: bumperForce
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 134744}
