@@ -26,6 +26,8 @@ namespace Assets.Scripts.Audio_Controllers {
             }
         }
 
+        private void OnDestroy() { m_obstacle.OnHit -= ObstacleOnOnHit; }
+
         private void Start() {
             m_obstacle = GetComponent<IObstacle>();
             m_audioSource = GetComponent<AudioSource>();
