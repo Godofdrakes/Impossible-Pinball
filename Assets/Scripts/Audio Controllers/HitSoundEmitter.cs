@@ -15,7 +15,7 @@ namespace Assets.Scripts.Audio_Controllers {
 
         private AudioSource m_audioSource = null;
 
-        private void ObstacleOnOnHit( Bumper bumper ) {
+        private void ObstacleOnOnHit( IObstacle bumper ) {
             AudioClip randomClip = HitAudioClips.GetRandom();
             if ( randomClip != null ) {
                 m_audioSource.clip = randomClip;
