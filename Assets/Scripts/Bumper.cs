@@ -12,7 +12,8 @@ public class Bumper : MonoBehaviour, IObstacle
         Target = 1
     }
 
-    [Range(0, 3)] public float BumperForce;
+    [Range(0, 3)]
+    public float BumperForce;
 
     public Styles BumperStyles;
 
