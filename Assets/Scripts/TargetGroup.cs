@@ -1,18 +1,19 @@
 ﻿using System;
 using UnityEngine;
 using System.Collections;
+using Obstacles;
 using UnityEngine.UI;
 
 public class TargetGroup : MonoBehaviour
 {
-    private Bumper[] m_children = null;
+    private IObstacle[] m_children = null;
 
     private int ActiveChildren
     {
         get
         {
             int n = 0;
-            foreach (Bumper child in m_children)
+            foreach (IObstacle child in m_children)
             {
                 if (child.IsObjectEnabled)
                 {
@@ -26,19 +27,19 @@ public class TargetGroup : MonoBehaviour
 	// Use this for initialization
 	void Start ()
     {
-        m_children = GetComponentsInChildren<Bumper>();
+        m_children = GetComponentsInChildren<IObstacle>();
         Debug.Log("Current number of children: " + ActiveChildren);
 
 
-	    foreach (Bumper bumper in m_children)
+	    foreach (IObstacle obstacle in m_children)
 	    {
-            bumper.OnHit += OnHit;
+            obstacle.OnHit += OnHit;
         }
 	}
 
-    private void OnHit(Bumper bumper)
+    private void OnHit(IObstacle obstacle)
     {
-        DeactivateChild(bumper);
+        DeactivateChild(obstacle);
     }
 
     // Update is called once per frame
@@ -49,18 +50,18 @@ public class TargetGroup : MonoBehaviour
 	    }
 	}
 
-    void DeactivateChild(Bumper bumper)
+    void DeactivateChild(IObstacle obstacle)
     {
-        bumper.IsObjectEnabled = false;
+        obstacle.IsObjectEnabled = false;
         Debug.Log("Child Deactivated. Current Children: " + ActiveChildren);
     }
 
     IEnumerator ActivateChildren()
     {
         yield return new WaitForSeconds(0.5f);
-        foreach (Bumper bumper in m_children)
+        foreach (IObstacle obstacle in m_children)
         {
-            bumper.IsObjectEnabled = true;
+            obstacle.IsObjectEnabled = true;
         }
     }
 }

@@ -1,6 +1,5 @@
-﻿using JetBrains.Annotations;
+﻿using Obstacles;
 using UnityEngine;
-using Obstacles;
 
 public class Bumper : MonoBehaviour, IObstacle
 {
@@ -12,8 +11,7 @@ public class Bumper : MonoBehaviour, IObstacle
         Target = 1
     }
 
-    [Range(0, 3)]
-    public float BumperForce;
+    [Range(0, 3)] public float BumperForce;
 
     public Styles BumperStyles;
 
@@ -22,6 +20,8 @@ public class Bumper : MonoBehaviour, IObstacle
         get { return gameObject.activeSelf; }
         set { gameObject.SetActive(value); }
     }
+
+    public event DOnHit OnHit;
 
     private void Start()
     {
@@ -39,6 +39,4 @@ public class Bumper : MonoBehaviour, IObstacle
             }
         }
     }
-
-    public event DOnHit OnHit;
 }
