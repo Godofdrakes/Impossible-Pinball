@@ -1,8 +1,10 @@
-﻿using UnityEngine;
+﻿using JetBrains.Annotations;
+using UnityEngine;
+using Obstacles;
 
-public class Bumper : MonoBehaviour
+public class Bumper : MonoBehaviour, IObstacle
 {
-    public delegate void DOnHit(Bumper bumper);
+    //public delegate void DOnHit(Bumper bumper);
 
     public enum Styles
     {
@@ -13,8 +15,6 @@ public class Bumper : MonoBehaviour
     [Range(0, 3)] public float BumperForce;
 
     public Styles BumperStyles;
-
-    public DOnHit OnHit;
 
     public bool IsObjectEnabled
     {
@@ -38,4 +38,6 @@ public class Bumper : MonoBehaviour
             }
         }
     }
+
+    public event DOnHit OnHit;
 }
