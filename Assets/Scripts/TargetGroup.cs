@@ -3,9 +3,8 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 
-public class TPanelGroup : MonoBehaviour
+public class TargetGroup : MonoBehaviour
 {
-
     private Bumper[] m_children = null;
 
     private int ActiveChildren
@@ -40,8 +39,6 @@ public class TPanelGroup : MonoBehaviour
     private void OnHit(Bumper bumper)
     {
         DeactivateChild(bumper);
-        
-        
     }
 
     // Update is called once per frame
@@ -56,7 +53,6 @@ public class TPanelGroup : MonoBehaviour
     {
         bumper.IsObjectEnabled = false;
         Debug.Log("Child Deactivated. Current Children: " + ActiveChildren);
-        Debug.Log(m_children.Length);
     }
 
     IEnumerator ActivateChildren()
