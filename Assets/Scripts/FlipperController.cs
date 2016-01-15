@@ -31,7 +31,7 @@ namespace Assets.Scripts {
         public bool IsObjectEnabled { get { return gameObject.activeSelf; } set { gameObject.SetActive( value ); } }
 
         private DOnHit m_onHit;
-        public event DOnHit OnHit { add { m_onHit += value; } remove { m_onHit -= value; } };
+        public event DOnHit OnHit { add { m_onHit += value; } remove { m_onHit -= value; } }
 
         public void OnCollisionEnter( Collision collision ) {
             if ( m_onHit != null ) {
