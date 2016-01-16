@@ -28,7 +28,10 @@ namespace Assets.Scripts.Environment {
             IsEnabled = m_initialState;
         }
 
-        private void SetColor( Color c ) {
+        private void SetColor( Color c )
+        {
+            Debug.Log(m_isEnabled);
+            m_meshRenderer.material.EnableKeyword("_EMISSION");
             m_meshRenderer.material.SetColor( "_EmissionColor", c );
         }
 

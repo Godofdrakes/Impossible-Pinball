@@ -12,9 +12,11 @@ namespace Assets.Scripts.Environment {
 
         private IObstacle m_obstacle = null;
 
+        [SerializeField] private bool m_invert = false;
+
         private void CheckLightSwitch( IObstacle sourceObject ) {
             foreach ( LightSwitch lightSwitch in m_lightSwitches ) {
-                lightSwitch.IsEnabled = sourceObject.IsObjectEnabled;
+                lightSwitch.IsEnabled = m_invert ? !sourceObject.IsObjectEnabled : sourceObject.IsObjectEnabled;
             }
         }
 
