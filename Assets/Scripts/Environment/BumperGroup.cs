@@ -57,7 +57,7 @@ namespace Assets.Scripts.Environment {
                 
             }
             ScoreDisplay.AddScore(m_pointValue);
-            //_coroutine = null;
+            _coroutine = null;
         } 
     }
 

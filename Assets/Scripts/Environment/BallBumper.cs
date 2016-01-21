@@ -34,12 +34,13 @@ namespace Assets.Scripts.Environment {
 
         public void OnCollisionEnter( Collision collision ) {
             collision.rigidbody.AddForce( -1 * collision.contacts[0].normal * BumperForce, ForceMode.Impulse );
+            ScoreDisplay.AddScore(m_pointValue);
             if ( Health > 0 ) {
                 --Health;
             }
             if ( m_onHit != null ) {
                 m_onHit( this );
-                ScoreDisplay.AddScore(m_pointValue);
+                
             }
         }
 
