@@ -2,7 +2,7 @@
 using UnityEngine;
 
 
-namespace Assets.Scripts {
+namespace Assets.Scripts.Environment {
 
     [ RequireComponent( typeof( PinballLauncher ) ) ]
     public class PlayerControlledLauncher : MonoBehaviour {

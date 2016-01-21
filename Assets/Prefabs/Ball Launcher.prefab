@@ -12,9 +12,10 @@ GameObject:
   - 23: {fileID: 2363656}
   - 114: {fileID: 11410564}
   - 114: {fileID: 11497464}
+  - 114: {fileID: 11472666}
   m_Layer: 0
   m_Name: Ball Launcher
-  m_TagString: Untagged
+  m_TagString: Main Ball Launcher
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -75,7 +76,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0d6b9338086c774097caabc78874710, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DebugBall: {fileID: 5422794, guid: 251ac7a2d5936a048a6e9d31dbcaf49b, type: 2}
   ForceMultipler:
     serializedVersion: 2
     m_Curve:
@@ -96,6 +96,18 @@ MonoBehaviour:
   MaxForce: 35
   MaxForceTime: 1
   Charging: 0
+--- !u!114 &11472666
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 148384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cef462d71333ba4fab12706de2f1074, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DebugBall: {fileID: 5422794, guid: 251ac7a2d5936a048a6e9d31dbcaf49b, type: 2}
 --- !u!114 &11497464
 MonoBehaviour:
   m_ObjectHideFlags: 1

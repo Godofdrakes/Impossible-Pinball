@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ball
+  - Ball Remover
+  - Main Ball Launcher
   layers:
   - Default
   - TransparentFX

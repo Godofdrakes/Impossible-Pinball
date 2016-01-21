@@ -3,14 +3,12 @@ using System.Collections.ObjectModel;
 using UnityEngine;
 
 
-namespace Assets.Scripts {
+namespace Assets.Scripts.Environment {
 
     public class PinballLauncher : MonoBehaviour {
 
         // Delegates for the size of the queue changing
         public delegate void DQueueChange( ReadOnlyCollection<Rigidbody> newQueue );
-
-        [ Tooltip( "If the queue is empty launch this ball." ) ] public Rigidbody DebugBall = null;
 
         [ Tooltip( "Depending on how long the launcher has been charging it will multiply the ForceValue by this." ) ] public AnimationCurve ForceMultipler = AnimationCurve.Linear( 0.0f, 0.0f, 1.0f, 1.0f );
 
@@ -29,6 +27,8 @@ namespace Assets.Scripts {
         // Queue of balls to fire
         private List<Rigidbody> m_ballQueue = new List<Rigidbody>();
 
+        public ReadOnlyCollection<Rigidbody> BallQueue { get { return m_ballQueue.AsReadOnly(); } }
+
         // Func to add a ball to the queue
         public void AddBallToQueue( Rigidbody ball ) {
             ball.gameObject.SetActive( false );
@@ -46,9 +46,7 @@ namespace Assets.Scripts {
         // Func to get the next ball to fire
         private Rigidbody GetNextBall() {
             if ( m_ballQueue.Count == 0 ) {
-                return DebugBall != null
-                    ? Instantiate( DebugBall, Vector3.zero, Quaternion.identity ) as Rigidbody
-                    : null;
+                return null;
             }
             Rigidbody ball = m_ballQueue[0];
             m_ballQueue.RemoveAt( 0 );
