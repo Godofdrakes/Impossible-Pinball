@@ -28,6 +28,10 @@ namespace Assets.Scripts.Environment {
             }
         }
 
+        [SerializeField] private int m_initialHealth = 0;
+
+        [SerializeField] private int m_pointValue = 0;
+
         public void OnCollisionEnter( Collision collision ) {
             collision.rigidbody.AddForce( -1 * collision.contacts[0].normal * BumperForce, ForceMode.Impulse );
             if ( Health > 0 ) {
@@ -35,6 +39,7 @@ namespace Assets.Scripts.Environment {
             }
             if ( m_onHit != null ) {
                 m_onHit( this );
+                ScoreDisplay.AddScore(m_pointValue);
             }
         }
 
@@ -44,6 +49,7 @@ namespace Assets.Scripts.Environment {
             m_collider = GetComponent<Collider>();
             m_meshRenderer = GetComponent<MeshRenderer>();
             IsObjectEnabled = true;
+            m_initialHealth = Health;
         }
 
         public bool IsObjectEnabled {
@@ -53,6 +59,13 @@ namespace Assets.Scripts.Environment {
                 m_meshRenderer.enabled = m_isObjectEnabled;
                 m_collider.enabled = m_isObjectEnabled;
             }
+        }
+
+        public void Reset()
+        {
+            Health = m_initialHealth;
+            IsObjectEnabled = true;
+            m_onHit(this);
         }
 
         public event DOnHit OnHit { add { m_onHit += value; } remove { m_onHit -= value; } }
