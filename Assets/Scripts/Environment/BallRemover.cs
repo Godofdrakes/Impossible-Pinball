@@ -9,6 +9,7 @@ namespace Assets.Scripts.Environment {
         public void OnTriggerEnter( Collider other ) {
             if ( other.tag == SRTags.Ball ) {
                 Destroy( other.gameObject );
+                FieldControl.m_currentBalls.Remove(other.gameObject);
             }
         }
     }

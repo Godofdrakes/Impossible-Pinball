@@ -38,7 +38,6 @@ namespace Assets.Scripts {
                 m_onHit( this );
             }
         }
-
     }
 
 }
