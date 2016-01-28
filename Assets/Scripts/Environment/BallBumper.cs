@@ -28,7 +28,7 @@ namespace Assets.Scripts.Environment {
             }
         }
 
-        [SerializeField] private int m_initialHealth = 0;
+        [SerializeField] private int m_initialHealth = -1;
 
         [SerializeField] private int m_pointValue = 0;
 
