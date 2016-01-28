@@ -8,7 +8,7 @@ using UnityEngine.UI;
 namespace Assets.Scripts.UI {
 
     [ RequireComponent( typeof( Text ) ) ]
-    public class BallDisplay : MonoBehaviour {
+    public class BallCounter : MonoBehaviour {
 
         private Text m_text = null;
 
