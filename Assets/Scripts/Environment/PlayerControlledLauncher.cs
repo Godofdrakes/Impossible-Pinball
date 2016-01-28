@@ -9,9 +9,18 @@ namespace Assets.Scripts.Environment {
 
         public string InputBind = SRInput.Fire1;
 
+        [ SerializeField ]
+        Rigidbody[] m_initialBalls = new Rigidbody[0];
+
         private PinballLauncher m_pinballLauncher = null;
 
-        private void Start() { m_pinballLauncher = GetComponent<PinballLauncher>(); }
+        private void Start() {
+            m_pinballLauncher = GetComponent<PinballLauncher>();
+            foreach ( Rigidbody ball in m_initialBalls ) {
+                m_pinballLauncher.AddBallToQueue( Instantiate( ball ) );
+            }
+            m_initialBalls = new Rigidbody[0];
+        }
 
         private void Update() { m_pinballLauncher.Charging = Input.GetButton( InputBind ); }
 

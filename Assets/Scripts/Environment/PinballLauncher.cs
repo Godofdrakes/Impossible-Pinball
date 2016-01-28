@@ -2,6 +2,7 @@
 using System.Collections.ObjectModel;
 using UnityEngine;
 
+using Assets.Scripts;
 
 namespace Assets.Scripts.Environment {
 
@@ -66,7 +67,7 @@ namespace Assets.Scripts.Environment {
         }
 
         private void LogQueueChange( ReadOnlyCollection<Rigidbody> newQueue ) {
-            Debug.LogFormat( "#{0}# You have {1} balls remaining.", GetType().Name, newQueue.Count );
+            this.LogMessage( string.Format( "You have {0} balls remaining", newQueue.Count ) );
         }
 
         private void Start() { OnQueueChange += LogQueueChange; }
