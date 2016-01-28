@@ -5,20 +5,21 @@ using System.Collections.Generic;
 public class FieldControl : MonoBehaviour
 {
 
-    public static List<GameObject> m_currentBalls;
-    private GameObject[] m_balls;
-
     [SerializeField][Range(0,10)] private int m_tiltForce = 5;
 
-	// Use this for initialization
-	void Start () {
+    public static GameObject[] ActiveBalls
+    {
+        get { return GameObject.FindGameObjectsWithTag(SRTags.Ball); }
+    }
 
-	}
+    // Use this for initialization
+	void Start ()
+    {
+    }
 	
 	// Update is called once per frame
 	void Update ()
 	{
-	    m_currentBalls = new List<GameObject>(GameObject.FindGameObjectsWithTag(SRTags.Ball));
 	    if (Input.GetKeyDown(KeyCode.Z))
 	    {
 	        TiltLeft();
@@ -32,7 +33,7 @@ public class FieldControl : MonoBehaviour
     public void TiltRight()
     {
         Debug.Log("About to Tilt");
-        foreach (GameObject ball in m_currentBalls)
+        foreach (GameObject ball in ActiveBalls)
         {
             ball.GetComponent<Rigidbody>().AddForce(Vector3.right * m_tiltForce * .1f, ForceMode.Impulse);
             Debug.Log("Tilted");
@@ -41,7 +42,7 @@ public class FieldControl : MonoBehaviour
     public void TiltLeft()
     {
         Debug.Log("About to Tilt");
-        foreach (GameObject ball in m_currentBalls)
+        foreach (GameObject ball in ActiveBalls)
         {
             ball.GetComponent<Rigidbody>().AddForce(Vector3.left * m_tiltForce * .1f, ForceMode.Impulse);
             Debug.Log("Tilted");

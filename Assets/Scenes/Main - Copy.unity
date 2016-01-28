@@ -173,7 +173,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 498328, guid: d3bf1c00218998b4e88c342404d0c114, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.392
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 498328, guid: d3bf1c00218998b4e88c342404d0c114, type: 2}
       propertyPath: m_LocalPosition.y
@@ -181,7 +181,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 498328, guid: d3bf1c00218998b4e88c342404d0c114, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -1.072
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 498328, guid: d3bf1c00218998b4e88c342404d0c114, type: 2}
       propertyPath: m_LocalRotation.x
@@ -1229,6 +1229,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1904366791}
+  - 114: {fileID: 1904366792}
   m_Layer: 0
   m_Name: Pinball Field
   m_TagString: Untagged
@@ -1249,6 +1250,18 @@ Transform:
   - {fileID: 628039937}
   m_Father: {fileID: 0}
   m_RootOrder: 3
+--- !u!114 &1904366792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1904366790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e97ba2396c27c442a64722efd885ee1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_tiltForce: 5
 --- !u!1 &1911053535
 GameObject:
   m_ObjectHideFlags: 0
