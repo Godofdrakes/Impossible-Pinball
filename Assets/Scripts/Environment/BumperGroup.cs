@@ -32,8 +32,8 @@ namespace Assets.Scripts.Environment {
 
         public void Start()
         {
-            Debug.Log("Current m_bumpers length: " + m_bumpers.Length);
-            Debug.Log("Current Active Children: "  + ActiveChildren);
+            //Debug.Log("Current m_bumpers length: " + m_bumpers.Length);
+            //Debug.Log("Current Active Children: "  + ActiveChildren);
         }
 
         public void Update()

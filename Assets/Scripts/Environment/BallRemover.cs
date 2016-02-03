@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Assets.Scripts.UI;
 using UnityEngine;
 
@@ -14,16 +15,20 @@ namespace Assets.Scripts.Environment {
                 Destroy( other.gameObject );
             }
 
-            // Game Over Check
-            PlayerControlledLauncher launcher =
-                GameObject.FindGameObjectWithTag( SRTags.Main_Ball_Launcher ).GetComponent<PlayerControlledLauncher>();
-            this.LogMessage( string.Format( "Balls in launcher: {1}. Balls in play: {0}.",
-                                            launcher.PinballLauncher.BallQueue.Count,
-                                            GameObject.FindGameObjectsWithTag( SRTags.Ball ).Length ) );
-            if ( launcher &&
-                 launcher.PinballLauncher.BallQueue.Count < 1 &&
-                 GameObject.FindGameObjectsWithTag( SRTags.Ball ).Length < 1 ) {
-                // GameObject.FindGameObjectsWithTag( SRTags.Ball ).Length <= 1 because the ball isn't actually deleted until AFTER this code is run.
+            int ballsInLauncher = 0;
+            if ( PlayerControlledLauncher.MainLauncher == null ) {
+                this.LogWarning( "PlayerControlledLauncher.MainLauncher == null" );
+            }
+            else {
+                ballsInLauncher = PlayerControlledLauncher.MainLauncher.PinballLauncher.BallQueue.Count;
+            }
+
+            int ballsInPlay =
+                FindObjectsOfType<Rigidbody>()
+                    .Count( body => body.tag == SRTags.Ball && body != other.attachedRigidbody );
+
+            if ( ballsInLauncher < 1 &&
+                 ballsInPlay < 1 ) {
                 GameOverPopup.ShowGameOver();
             }
         }

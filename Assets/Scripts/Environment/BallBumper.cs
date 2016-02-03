@@ -50,7 +50,7 @@ namespace Assets.Scripts.Environment {
             m_collider = GetComponent<Collider>();
             m_meshRenderer = GetComponent<MeshRenderer>();
             IsObjectEnabled = true;
-            m_initialHealth = Health;
+            Health = m_initialHealth;
         }
 
         public bool IsObjectEnabled {

@@ -1,27 +1,13 @@
-﻿using UnityEngine;
-using UnityEngine.UI;
-using System.Collections;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
 
 public class GameUI : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    public void ExitGame() { Application.Quit(); }
 
-    public void StartNewGame()
-    {
-        SceneManager.LoadScene("Main");
-    }
+    public void StartNewGame() { SceneManager.LoadScene( "TableDesign" ); }
 
-    public void ExitGame()
-    {
-        Application.Quit();
-    }
 }

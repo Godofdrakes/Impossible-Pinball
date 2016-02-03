@@ -13,7 +13,8 @@ namespace Assets.Scripts.Environment {
 
         private bool m_isEnabled = false;
 
-        [ SerializeField ] private bool m_initialState = false;
+        [ SerializeField ]
+        private bool m_initialState = false;
 
         public bool IsEnabled {
             get { return m_isEnabled; }
@@ -28,10 +29,8 @@ namespace Assets.Scripts.Environment {
             IsEnabled = m_initialState;
         }
 
-        private void SetColor( Color c )
-        {
-            Debug.Log(m_isEnabled);
-            m_meshRenderer.material.EnableKeyword("_EMISSION");
+        private void SetColor( Color c ) {
+            m_meshRenderer.material.EnableKeyword( "_EMISSION" );
             m_meshRenderer.material.SetColor( "_EmissionColor", c );
         }
 

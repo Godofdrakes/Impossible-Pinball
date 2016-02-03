@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 
@@ -13,6 +14,14 @@ namespace Assets.Scripts.Environment {
         Rigidbody[] m_initialBalls = new Rigidbody[0];
 
         private PinballLauncher m_pinballLauncher = null;
+
+        public static PlayerControlledLauncher MainLauncher {
+            get {
+                return
+                    FindObjectsOfType<PlayerControlledLauncher>()
+                        .First( launcher => launcher.tag == SRTags.Main_Ball_Launcher );
+            }
+        }
 
         public PinballLauncher PinballLauncher { get { return m_pinballLauncher; } }
 
