@@ -14,6 +14,8 @@ namespace Assets.Scripts.Environment {
 
         private PinballLauncher m_pinballLauncher = null;
 
+        public PinballLauncher PinballLauncher { get { return m_pinballLauncher; } }
+
         private void Start() {
             m_pinballLauncher = GetComponent<PinballLauncher>();
             foreach ( Rigidbody ball in m_initialBalls ) {
