@@ -8,6 +8,6 @@ public class GameUI : MonoBehaviour {
 
     public void ExitGame() { Application.Quit(); }
 
-    public void StartNewGame() { SceneManager.LoadScene( "TableDesign" ); }
+    public void StartNewGame() { SceneManager.LoadScene( 1 ); }
 
 }
