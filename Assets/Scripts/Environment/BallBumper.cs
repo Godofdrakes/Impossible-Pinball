@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Obstacles;
 using UnityEngine;
-
+using System.Collections;
 
 namespace Assets.Scripts.Environment {
 
@@ -32,15 +32,24 @@ namespace Assets.Scripts.Environment {
 
         [SerializeField] private int m_pointValue = 0;
 
+        [SerializeField] private bool autoEnable = false;
+
+        private Coroutine _coroutine = null;
+
         public void OnCollisionEnter( Collision collision ) {
             collision.rigidbody.AddForce( -1 * collision.contacts[0].normal * BumperForce, ForceMode.Impulse );
             ScoreDisplay.AddScore(m_pointValue);
-            if ( Health > 0 ) {
+            if ( Health > 0 ){
                 --Health;
             }
-            if ( m_onHit != null ) {
+            if ( m_onHit != null ){
                 m_onHit( this );
                 
+            }
+            if(_coroutine == null){ 
+                if (autoEnable){
+                        _coroutine = StartCoroutine(EnableBumper());
+                }
             }
         }
 
@@ -67,6 +76,12 @@ namespace Assets.Scripts.Environment {
             Health = m_initialHealth;
             IsObjectEnabled = true;
             m_onHit(this);
+        }
+
+        private IEnumerator EnableBumper()
+        {
+            yield return new WaitForSeconds(10.0f);
+            Reset();
         }
 
         public event DOnHit OnHit { add { m_onHit += value; } remove { m_onHit -= value; } }

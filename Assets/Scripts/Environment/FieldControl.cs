@@ -6,7 +6,6 @@ public class FieldControl : MonoBehaviour
 {
 
     [SerializeField][Range(0,10)] private int m_tiltForce = 5;
-
     public static GameObject[] ActiveBalls
     {
         get { return GameObject.FindGameObjectsWithTag(SRTags.Ball); }
@@ -14,11 +13,11 @@ public class FieldControl : MonoBehaviour
 
 	void Update ()
 	{
-	    if (Input.GetKeyDown(KeyCode.Z))
-	    {
-	        TiltLeft();
-	    }
-        if (Input.GetKeyDown(KeyCode.Slash))
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            TiltLeft();
+        }
+        if (Input.GetKeyDown(KeyCode.RightShift))
         {
             TiltRight();
         }

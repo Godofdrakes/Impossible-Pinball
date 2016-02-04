@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using Obstacles;
 using UnityEngine;
 
@@ -6,23 +7,37 @@ using UnityEngine;
 namespace Assets.Scripts {
 
     [RequireComponent( typeof( HingeJoint ) )]
-    public class FlipperController : MonoBehaviour, IObstacle {
+    [RequireComponent(typeof(AudioSource))]
+    public class FlipperController : MonoBehaviour, IObstacle
+    {
 
         public int torqueValue = 500;
 
-        public string InputBind = SRInput.Jump;
-
+        public string InputBind;
         public float activeAngle = 35;
         public float passiveAngle = -35;
 
         private HingeJoint hj;
         private bool m_isObjectEnabled;
+        private AudioSource m_swingAudioSource;
 
         // Update is called once per frame
-        void FixedUpdate( ) { Swing( Input.GetButton( InputBind ) ? activeAngle : passiveAngle, torqueValue ); }
+        void FixedUpdate()
+        {
+            if (Input.GetButtonDown(InputBind))
+            {
+                m_swingAudioSource.Play();
+            }
+            Swing( Input.GetButton( InputBind ) ? activeAngle : passiveAngle, torqueValue );
+        }
 
         // Use this for initialization
-        void Start( ) { hj = GetComponent<HingeJoint>( ); }
+        void Start()
+        {
+            hj = GetComponent<HingeJoint>( );
+            m_swingAudioSource = GetComponent<AudioSource>();
+            
+        }
 
         void Swing( float angle, float force ) {
             hj.spring = new JointSpring { spring = force, targetPosition = angle, damper = hj.spring.damper };
