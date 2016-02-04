@@ -98,7 +98,8 @@ namespace InControl
 
 			if (Input.GetKeyDown( KeyCode.R ))
 			{
-				Application.LoadLevel( "TestInputManager" );
+                UnityEngine.SceneManagement.SceneManager.LoadScene( "TestInputManager" );
+                
 			}
 		}
 
