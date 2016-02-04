@@ -29,8 +29,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 125446}
   m_LocalRotation: {x: 0.70710665, y: 0, z: 0, w: 0.707107}
-  m_LocalPosition: {x: 0.4, y: 0, z: 0}
-  m_LocalScale: {x: 1.2, y: 0.2, z: 0.44423473}
+  m_LocalPosition: {x: 0.421, y: 0, z: -0.012}
+  m_LocalScale: {x: 1, y: 0.2, z: 0.44423473}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -92,7 +92,7 @@ HingeJoint:
   m_Anchor: {x: 0.5, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: -1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 1, y: -5.9999995, z: -0.24999927}
+  m_ConnectedAnchor: {x: 0.921, y: -6.0119996, z: -0.24999927}
   m_UseSpring: 1
   m_Spring:
     spring: 25
@@ -132,10 +132,10 @@ AudioSource:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 125446}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: e411337aa8614864fb0ea30069e1bab3, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 63adbace923f28c47a03ea9481f6b236, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -212,7 +212,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   torqueValue: 500
-  InputBind: Jump
+  InputBind: PaddleRight
   activeAngle: 35
   passiveAngle: -35
 --- !u!1001 &100100000

@@ -629,6 +629,10 @@ Prefab:
       propertyPath: m_ConnectedAnchor.z
       value: -0.24999927
       objectReference: {fileID: 0}
+    - target: {fileID: 8264182, guid: da4618489a2acbd43a92ece5111d793e, type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 63adbace923f28c47a03ea9481f6b236, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: da4618489a2acbd43a92ece5111d793e, type: 2}
   m_IsPrefabParent: 0
@@ -2273,6 +2277,10 @@ Prefab:
       propertyPath: m_ConnectedAnchor.z
       value: -0.24999927
       objectReference: {fileID: 0}
+    - target: {fileID: 8271070, guid: 77ef9900875755e4db2da9fa547ec66a, type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 63adbace923f28c47a03ea9481f6b236, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 77ef9900875755e4db2da9fa547ec66a, type: 2}
   m_IsPrefabParent: 0
@@ -2575,6 +2583,7 @@ MonoBehaviour:
   m_health: -1
   m_initialHealth: -1
   m_pointValue: 10
+  autoEnable: 0
 --- !u!23 &2027660824
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2673,6 +2682,7 @@ MonoBehaviour:
   m_health: -1
   m_initialHealth: 2
   m_pointValue: 0
+  autoEnable: 0
 --- !u!23 &2078480888
 MeshRenderer:
   m_ObjectHideFlags: 0
